@@ -38,8 +38,7 @@ const WelcomeMessage: React.FC = () => {
           Welcome to RST!
         </h2>
         <p className="text-foreground leading-relaxed">
-          If you want to know more about this website, visit the Contact page. 
-          If you don't like this site… Get Out! 😂
+          If you want to know more about this website, visit the Contact page.
         </p>
       </div>
     </div>
