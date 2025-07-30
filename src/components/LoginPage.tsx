@@ -92,7 +92,7 @@ const LoginPage: React.FC = () => {
               Welcome Back
             </CardTitle>
             <p className="text-gray-300 text-sm">
-              Access your AI-powered learning experience
+              Access your learning experience with RST-Academy
             </p>
           </CardHeader>
 
