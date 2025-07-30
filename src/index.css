@@ -1,0 +1,125 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 220 25% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 25% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 25% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 198 89% 48%;
+    --primary-foreground: 220 25% 8%;
+
+    --secondary: 220 20% 15%;
+    --secondary-foreground: 210 40% 95%;
+
+    --muted: 220 20% 15%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 198 89% 48%;
+    --accent-foreground: 220 25% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 15%;
+    --ring: 198 89% 48%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 220 25% 6%;
+    --sidebar-foreground: 210 40% 95%;
+    --sidebar-primary: 198 89% 48%;
+    --sidebar-primary-foreground: 220 25% 8%;
+    --sidebar-accent: 220 20% 12%;
+    --sidebar-accent-foreground: 210 40% 95%;
+    --sidebar-border: 220 20% 15%;
+    --sidebar-ring: 198 89% 48%;
+  }
+
+  [data-theme="electric"] {
+    --background: 220 25% 8%;
+    --foreground: 210 40% 98%;
+    --primary: 198 89% 48%;
+    --accent: 198 89% 48%;
+  }
+
+  [data-theme="neon"] {
+    --background: 260 25% 8%;
+    --foreground: 280 40% 98%;
+    --primary: 320 100% 50%;
+    --accent: 180 100% 50%;
+  }
+
+  [data-theme="sunset"] {
+    --background: 20 25% 8%;
+    --foreground: 40 40% 98%;
+    --primary: 25 100% 50%;
+    --accent: 320 100% 50%;
+  }
+
+  [data-theme="ocean"] {
+    --background: 200 25% 8%;
+    --foreground: 200 40% 98%;
+    --primary: 180 89% 48%;
+    --accent: 160 89% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-md bg-white/10 border border-white/20 rounded-xl;
+  }
+  
+  .neon-glow {
+    @apply shadow-lg;
+    box-shadow: 0 0 20px currentColor;
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl;
+  }
+
+  /* Floating animation for particles */
+  @keyframes float-1 {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+  }
+  
+  @keyframes float-2 {
+    0%, 100% { transform: translateX(0px) rotate(0deg); }
+    50% { transform: translateX(20px) rotate(90deg); }
+  }
+  
+  @keyframes float-3 {
+    0%, 100% { transform: translate(0px, 0px) rotate(0deg); }
+    33% { transform: translate(30px, -30px) rotate(120deg); }
+    66% { transform: translate(-20px, 20px) rotate(240deg); }
+  }
+
+  .animate-float-1 { animation: float-1 6s ease-in-out infinite; }
+  .animate-float-2 { animation: float-2 8s ease-in-out infinite; }
+  .animate-float-3 { animation: float-3 10s ease-in-out infinite; }
+}
